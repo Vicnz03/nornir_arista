@@ -1,0 +1,10 @@
+colorama==0.4.6
+importlib-metadata==4.13.0
+mypy-extensions==1.0.0
+netaddr==1.2.1
+nornir==3.4.1
+nornir-utils==0.2.0
+pyeapi==1.0.2
+ruamel.yaml==0.18.6
+ruamel.yaml.clib==0.2.8
+zipp==3.18.1
