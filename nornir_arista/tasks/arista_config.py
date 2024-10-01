@@ -66,7 +66,7 @@ def arista_config(task: Task, config: str, mode: str, commit_comments: str = '',
                 if commit_result:
                     task.host['commit'] = 'Successful'
                     logger.debug(task.host.name + ' :Commit: Successful, saving config')
-                    dev.execute('write memory')
+                    dev.enable('write memory')
                 else:
                     task.host['commit'] = 'Failed'
                     logger.debug(task.host.name + ' :Commit: Failed')
