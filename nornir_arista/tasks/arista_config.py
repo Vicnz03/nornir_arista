@@ -35,12 +35,12 @@ def arista_config(task: Task, config: str, mode: str, session_name: str = '',  c
         add_to_report(task_host=task.host,report_list = report_list)
         return Result(host=task.host, diff='') 
     
-
+    no_space_session_name = session_name.replace(' ','_')
     try:
         if session_timestamp:
-            dev._session_name = f'{session_name}_{int(time())}'
+            dev._session_name = f'{no_space_session_name}_{int(time())}'
         else:
-            dev._session_name = session_name
+            dev._session_name = no_space_session_name
         dev.configure_session()
         dev.config(config.split('\n'))
         diff = dev.diff()
